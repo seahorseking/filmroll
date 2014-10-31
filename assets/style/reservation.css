@@ -8,8 +8,16 @@
 	width: 68.181818181%;
 	margin: auto;
 }	
-	#reservation-steps a{
-		text-decoration: none;
+	a.scrollbar-item{
+		color: #c8c8c8;
+	}
+	a.scrollbar-item:hover{
+		color: #f8bb06;
+		text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
+	}
+	a.scrollbar-item.selected{
+		color: #f8bb06;
+		text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
 	}
 	.reservation-item{
 		width: 93.333333333%;
@@ -28,7 +36,7 @@
 #reservation-seats{
 	overflow: visible;
 	position: relative;
-	top: 50px;
+	padding-top: 30px;
 }
 	.reservation-seats-row{
 		overflow: hidden;
@@ -49,3 +57,59 @@
 		.occupied{
 			background-color: #171717;
 		}
+
+#seat-info{
+	position: absolute;
+	background-color: #c8c8c8;
+	border: solid 1px #171717;
+	padding: 5px 0px;
+	z-index: 2;
+}
+
+#reservation-legend{
+	clear: both;
+	overflow: hidden;
+	padding: 20px 0px 0px 0px;
+}
+#tickets{
+	text-align: left;
+	float: left;
+}
+	.ticket-type{
+		overflow: hidden;
+	}
+	.seat-adult{
+		background-color: #121db2; 
+	}
+	.seat-student{
+		background-color: #b2121a; 
+	}
+	.seat-child{
+		background-color: #16b212; 
+	}
+	.ticket-type-label{
+		float: left;
+		padding: 5px 0px 0px 10px;
+	}
+#price{
+	float: right;
+	overflow: hidden;
+}
+	#price-value{
+		color: #f8bb06;
+		text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
+	}
+
+.payment-category{
+	width: 28%;
+}
+.payment-seat{
+	width: 52%;
+}
+.payment-price{
+	width: 20%;
+}
+.payment-final-price{
+	color: #f8bb06;
+	text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
+}

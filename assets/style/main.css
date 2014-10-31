@@ -33,6 +33,9 @@ a{
 	text-decoration: underline;
 	color: #171717;
 }
+a.light{
+	color: #c8c8c8;
+}
 a:hover{
 	color: #f8bb06;
 }
@@ -184,6 +187,60 @@ table.center{
 .info-label{
 	color: #585858;
 	font-size: 14px;
+	overflow: hidden;
+}
+	.info-part{
+		float: left;
+		padding: 0px 10px;
+	}
+	
+.custom-button{
+	background-color: #171717;
+	margin: 8px 0px;
+}
+	.custom-button a{
+		display: block;
+		text-decoration: none;
+		padding: 8px 16px;
+		color: #c8c8c8;
+	}
+	.custom-button a:hover{
+		color: #f8bb06;
+	}
+.custom-button-right{
+	clear: right;
+	float: right;
+}
+.custom-button-left{
+	clear: left;
+	float: left;
+}
+.custom-table{
+	padding: 20px 0px 0px 0px;
+	overflow: visible;
+}
+.custom-row{
+	position: relative;
+	overflow: visible;
+	width: 100%;
+	height: 41px;
+}
+	.custom-subrow{
+		position: relative;
+		float: left;
+		width: 88.8888%;
+		height: 100%;
+	}
+
+.custom-column{
+	float: left;
+}
+	.custom-column>div{
+		padding: 10px 5px;
+	}
+
+.underline-dark{
+	border-bottom: solid 1px #585858;
 }
 
 .prepare-center{
@@ -218,7 +275,7 @@ table.center{
 	position: relative;
 	float: left;
 	right: 50%;
-	overflow: hidden;
+	overflow: visible;
 }
 .out-center-y{
 	position: relative;

@@ -1,4 +1,4 @@
-<a class="exception" href="">
+<a class="exception light" href="<?php echo base_url()."index.php/program";?>">
 	<div id="search" class="prepare-center">
 		<div class="out-center">
 			<div class="in-center">
