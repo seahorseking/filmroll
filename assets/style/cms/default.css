@@ -1,0 +1,396 @@
+*
+{
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+}
+
+@font-face {
+	font-family: 'WalterTurncoat';
+	src: url(../../fonts/WalterTurncoat.ttf) format("truetype");
+}
+
+body, html
+{
+	background-color: white;
+	margin: 0px;
+	text-decoration: none;
+	height: 100%;
+	font-family: 'PT Sans';
+}
+
+td a img
+{
+	width: 35px;
+	height: 35px;
+}
+
+#text
+{
+	margin-top: 150px;
+	text-align: center;
+	font-family: 'WalterTurncoat';
+}
+
+#index
+{
+	min-height: 100%;
+	position: relative;
+}
+
+#header
+{
+	background-image: url("../../images/gray_backg.png");
+	height: 60px;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	font-family: 'WalterTurncoat';
+	z-index: 2;
+	overflow: hidden;
+}
+
+#logo
+{
+	padding-top: 6px;
+	float: left;
+	text-align: center;
+	width: 17%;
+}
+
+#header a
+{
+	color: white;
+}
+
+#location
+{
+	float: left;
+	width: 66%;
+	color: white;
+	font-size: 30px;
+	padding-top: 10px;
+	overflow: hidden;
+}
+
+#login
+{
+	float: right;
+	width: 17%;
+	font-size: 35px;
+	text-align: center;
+	padding-top: 5px;
+}
+
+#workspace
+{
+	overflow: hidden;
+	position: relative;
+	height: 100%;
+}
+
+#workspace_box
+{
+	margin: 80px 0px 60px 0px;
+	position: relative;
+	overflow: hidden;
+	height: 100%;
+}
+
+#menu
+{
+	position: relative;
+	float: left;
+	margin: 0;
+	padding-top: 15px;
+	width: 17%;
+	height: 100%;
+	min-height: 100px;
+	text-align: center;
+	overflow: visible;
+	font-family: 'WalterTurncoat';
+}
+
+#menu a
+{
+	color: dimgray;
+	font-size: 25px;
+}
+
+	.menu_box
+	{
+		padding-top: 15px;
+		overflow: visible;
+	}
+
+	.vertic_space
+	{
+		width: 70%;
+		height: 2px;
+		background-image: url("../../images/gray_backg.png");
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+#screen
+{
+	position: relative;
+	overflow: visible;
+	float: left;
+	width: 66%;
+	height: auto;
+	min-height: 100%;
+}
+
+	.horiz_space
+	{
+		position: relative;
+		background-image: url("../../images/gray_backg.png");
+		height: 100%;
+		width: 0.7%;
+		padding-bottom: 10px;
+		min-height: 600px;
+	}
+
+	.horiz_space_left
+	{
+		float: left;
+	}
+
+	.horiz_space_right
+	{
+		float: right;
+	}
+
+	#workscreen
+	{
+		max-width: 97.878787%;
+		overflow: hidden;
+		height: auto;
+		font-size: 18px;
+		color: dimgray;
+		position: relative;
+	}
+
+		#workscreen_padding
+		{
+			margin: 45px 2.1%;
+			width: 100%;
+			overflow: hidden;
+		}
+
+		#workscreen table
+		{
+			margin: auto;
+			text-align: left;
+			padding-left: 25px;
+		}
+
+		#workscreen table a
+		{
+			color: dimgray;
+		}
+
+		#workscreen .table_border td
+		{
+			text-decoration: underline;
+			text-align: left;
+			padding-bottom: 15px;
+			font-family: Verdana;
+			font-size: 20px;
+			font-weight: bold;
+		}
+
+		#workscreen td
+		{
+			padding-left: 25px;
+		}
+
+#item_menu
+{
+	float: left;
+	height: auto;
+	width: 17%;
+	padding-top: 15px;
+	text-align: center;
+	font-family: 'WalterTurncoat';
+	font-size: 25px;
+}
+
+	#item_menu a
+	{
+		color: dimgray;
+	}
+
+	.vertic_space_item
+	{
+		width: 70%;
+		height: 2px;
+		background-image: url("../../images/gray_backg.png");
+		margin: 0 auto;
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+#footer
+{
+	margin-top: -40px;
+	position: relative;
+	background-image: url("../../images/gray_backg.png");
+	height: 40px;
+	width: 100%;
+	text-align: center;
+	font-family: 'WalterTurncoat';
+}
+
+	#footer_text
+	{
+		font-size: 20px;
+		color: white;
+		padding-top: 9px;
+	}
+
+.outercenter
+{
+	position: relative;
+	overflow: visible;
+	float: left;
+	left: 50%;
+}
+
+.innercenter
+{
+	position: relative;
+	overflow: hidden;
+	float: left;
+	right: 50%;
+}
+
+form
+{
+	float: left;
+	width: 500px;
+}
+
+form>div{
+	overflow: hidden;
+}
+
+form label
+{
+	float: left;
+	width: 200px;
+	text-align: right;
+	padding-right: 15px;
+	padding-top: 15px;
+}
+
+form input, form option
+{
+	float: left;
+	width: 200px;
+	margin-top: 15px;
+	height: 20px;
+	text-align: center;
+}
+
+form textarea
+{
+	float: left;
+	width: 202px;
+	margin-top: 15px;
+	height: 20px;
+	text-align: center;
+}
+
+form option
+{
+	margin-top: 2px;
+}
+
+#block
+{
+	float: left;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}
+
+#category
+{
+	float: left;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}
+
+#default
+{
+	float: left;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}
+
+#dynamic
+{
+	margin-top: 18px;
+	width: 20px;
+}
+
+#image
+{
+	float: left;
+	width: auto;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}
+
+#login_button
+{
+	font-size: 18px;
+	text-align: center;
+	width: 100px;
+	height: 30px;
+	margin-left: 318px;
+}
+
+#page
+{
+	float: left;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}
+
+#position
+{
+	width: 20px;
+}
+
+.save
+{
+	text-align: center;
+	width: 100px;
+	height: 25px;
+	margin-left: 318px;
+}
+
+.form-error{
+	padding: 0px 0px 20px 0px;
+}
+.form-error p{
+	text-align: center;
+	color: #a81616;
+}
+
+#subcategory
+{
+	float: left;
+	margin-top: 15px;
+	height: 22px;
+	text-align: center;
+}

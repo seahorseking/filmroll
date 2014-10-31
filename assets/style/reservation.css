@@ -1,0 +1,51 @@
+#content{
+	height: 100%;	
+}
+
+#reservation-steps{
+	position: relative;
+	height: 100%;
+	width: 68.181818181%;
+	margin: auto;
+}	
+	#reservation-steps a{
+		text-decoration: none;
+	}
+	.reservation-item{
+		width: 93.333333333%;
+		position: relative;
+		margin: 3.333333333%;
+		height: 140px;
+		background-color: #323232;
+	}
+
+#reservation-screen{
+	width: 70%;
+	height: 5px;
+	background-color: #171717;
+	margin: 10px auto;
+}
+#reservation-seats{
+	overflow: visible;
+	position: relative;
+	top: 50px;
+}
+	.reservation-seats-row{
+		overflow: hidden;
+		clear: both;
+	}
+		.reservation-seats-column-border{
+			width: 20px;
+			height: 20px;
+			border: solid 1px #585858;
+			padding: 4px;
+			float:left;
+		}
+		.reservation-seats-column-body{
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+		.occupied{
+			background-color: #171717;
+		}

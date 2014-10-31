@@ -1,0 +1,12 @@
+#pages{
+	padding: 0px 40px;
+	text-align: right;
+	clear: both;
+}
+
+.page-number{
+	display: inline-block
+}
+	.page-number a.exception{
+		text-decoration: underline;
+	}

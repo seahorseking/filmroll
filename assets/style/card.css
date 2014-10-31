@@ -1,0 +1,125 @@
+body, html{
+	padding: 0px;
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+}
+
+body>div{
+	height: 100%;
+	width: 100%;
+}
+
+#scrollbar{
+	position: fixed;
+	bottom: 0px;
+	left: 25%;
+	width: 50%;
+	height: 35px;
+	background-color: rgb(51, 51, 51);
+	z-index: 4;
+	opacity: 0.9;
+	-webkit-transition: opacity linear 500ms;
+	transition: opacity linear 500ms;
+}
+#scrollbar.sweep-scroll-invisible, .sweep-scroll-box.sweep-scroll-invisible{
+	opacity: 0.1;
+	-webkit-transition: opacity linear 1000ms;
+	transition: opacity linear 1000ms;
+}
+	.scrollbar-item a{
+		display: block;
+		width: 100%;
+		height: 100%;
+		color: #1717174;
+	}
+	.scrollbar-item.selected a{
+		color: #f8bb06;
+		text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
+	}
+.sweep-scroll{
+	z-index: 5;
+}
+	.sweep-scroll-box{
+		position: absolute;
+		display: table;
+		bottom: 10px;
+		right: 10px;
+		z-index: 4;
+		height: 35px;
+		font-size: 20px;
+		color: #a4a4a4;
+		background-color: rgb(51, 51, 51);
+		opacity: 0.9;
+		-webkit-transition: opacity linear 500ms;
+		transition: opacity linear 500ms;
+	}
+	
+	.scrollbox-body{
+		padding: 7px 12px;
+	}
+.card-main{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.card{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+	-webkit-transition: left ease 500ms;
+	transition: left ease 500ms;
+	z-index: 1;
+}
+	.card-body-w-menu{
+		position: relative;
+		height: 100%;
+		margin: 35px 0px 0px 0px;
+	}
+		.card-scroll-y{
+			height: 100%;
+			overflow: auto;
+		}
+
+.card-move-right{
+	position: absolute;
+	top: 0px;
+	left: 100%;
+}
+.card-move-left{
+	position: absolute;
+	top: 0px;
+	left: -100%;
+}
+
+.pictogram{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	width: 15px;
+	height: 15px;
+	opacity: 0.4;
+	z-index: 5;
+}
+	.pictogram img{
+		display: block;
+		width: 100%;
+	}
+
+.formal{
+	background-image: url('../images/bg_tile.png');
+	background-repeat: repeat;
+}
+
+
+tr.horizontal-border td{
+	border-bottom: solid 1px #a4a4a4;
+}
+td.vertical-border{
+	border-right: solid 1px #a4a4a4;
+}

@@ -1,0 +1,59 @@
+
+.program-table{
+	padding: 20px 0px 0px 0px;
+	overflow: visible;
+}
+.program-row{
+	position: relative;
+	overflow: visible;
+	width: 100%;
+	height: 41px;
+}
+	.program-subrow{
+		position: relative;
+		float: left;
+		width: 88.8888%;
+		height: 100%;
+	}
+
+.program-column{
+	float: left;
+}
+	.program-column>div{
+		padding: 10px 5px;
+	}
+	.program-title{
+		width: 28%;
+	}
+	.program-length{
+		width: 11.1111%;
+		text-align: center;
+	}
+	.program-language{
+		width: 12%;
+	}
+	.program-time{
+		position: relative;
+		width: 60%;
+		height: 100%;
+		overflow: hidden;
+		padding: 0px;
+	}
+		.program-time-item{
+			position: absolute;
+			width: 20%;
+			display: inline-block;
+		}
+
+.program-date{
+	padding: 10px 0px 0px 11.1111%;
+}		
+.underline-dark{
+	border-bottom: solid 1px #585858;
+}
+.rightsideline-dark{
+	padding: 0px;
+}
+.rightsideline-dark>div{
+	border-right: solid 1px #585858;
+}
