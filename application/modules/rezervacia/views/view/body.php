@@ -1,10 +1,96 @@
 <?php 
 $seats_from = 13;
 $seats_to = 21;
+$movies = array(
+		array(
+				'title' => "The Interview",
+				'slug' => "the-interview",
+		),
+		array(
+				'title' => "Interstellar",
+				'slug' => "interstellar",
+		),
+		array(
+				'title' => "The Fighter",
+				'slug' => "the-fighter",
+		),
+);
 ?>
 <div class="card-main">
 	<div class="card card-move-left">
 		<div class="title1">Výber Filmu</div>
+		<form>
+			<div>
+				<label for="select-movie">Film</label>
+				<select id="select-movie">
+					<?php 
+					foreach ($movies as $m){
+						if ($m['slug'] == $selected_m){
+							?>
+							<option value="<?php echo $m['slug'];?>" selected="<?php echo $m['slug'];?>"><?php echo $m['title'];?></option>
+							<?php
+						}
+						else{
+							?>
+							<option value="<?php echo $m['slug'];?>"><?php echo $m['title'];?></option>
+							<?php
+						}
+					}
+					?>
+				</select>
+			</div>
+			<div>
+				<label for="select-time">Čas</label>
+				<select id="select-time">
+					<?php 
+					for ($i = 1700; $i < 2200; $i+=100){
+						if (($i % 100) < 10){
+							$time_form = ($i / 100).":0".($i % 100);
+						}
+						else{
+							$time_form = ($i / 100).":".($i % 100);
+						}
+						if ($i == $selected_t){
+							?>
+							<option value="<?php echo $i;?>" selected="<?php echo $i;?>"><?php echo $time_form;?></option>
+							<?php
+						}
+						else{
+							?>
+							<option value="<?php echo $i;?>"><?php echo $time_form;?></option>
+							<?php
+						}
+					}
+					?>
+				</select>
+			</div>
+			<div>
+				<label for="select-date">Dátum</label>
+				<select id="select-date">
+					<?php 
+					$rozdel = explode("-", $selected_d);
+					for ($i = 10; $i < 17; $i++){
+						$date_form = $i.".".$rozdel[1].".".$rozdel[2];
+						if ($i == $rozdel[0]){
+							?>
+							<option value="<?php echo $i;?>" selected="<?php echo $i;?>"><?php echo $date_form;?></option>
+							<?php
+						}
+						else{
+							?>
+							<option value="<?php echo $i;?>"><?php echo $date_form;?></option>
+							<?php
+						}
+					}
+					?>
+				</select>
+			</div>
+		</form>
+		<div id="reservation-button">
+			<div class="custom-button custom-button-right">
+				<a href="javascript:void(0)" onClick="cards.increment();"><div>Ďalej</div></a>
+			</div>
+		</div>
 	</div>
 	<div class="card card-active">
 		<div class="title1">Výber Miesta</div>
@@ -70,6 +156,9 @@ $seats_to = 21;
 		<div id="payment-recapitulation" class="custom-table"></div>
 		<div class="custom-button custom-button-left">
 			<a href="javascript:void(0)" onClick="cards.decrement();"><div>Späť</div></a>
+		</div>
+		<div class="custom-button custom-button-right">
+			<a href="<?php echo base_url()."index.php/rezervacia/dokoncenie"?>"><div>Zaplatiť</div></a>
 		</div>
 	</div>
 </div>

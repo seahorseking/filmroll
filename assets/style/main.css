@@ -23,10 +23,15 @@ input, textarea, select{
 	background-color: #585858;
 	outline: none;
 	padding: 3px;
+	margin: 1px;
 	font-size: 18px;
 }
 input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus{
 	border: solid 1px #f8bb06;
+}
+label{
+	display: inline-block;
+	width: 100px;
 }
 
 a{
