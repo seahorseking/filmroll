@@ -54,6 +54,8 @@ function Cards(){
 	
 	this.sweepScrollConstruct = function(elem){
 		switch ($(elem).attr('id')){
+		case 'menu':
+			break;
 		case 'scrollbar':
 		case 'program-scroll':
 		case 'reservation-steps':
@@ -100,9 +102,10 @@ function Cards(){
 				$(this.activeObj).children(".sweep-scroll").removeClass("sweep-scroll-invisible");
 				var tmpThis = this;
 				if ($(this.activeObj).children(".sweep-scroll").size() > 0){
+					alert("1");
 					$(this.activeObj).children(".sweep-scroll").each(function(index, elem){tmpThis.sweepScrollConstruct(this);});
 					setTimeout(this.onSweepFinnish, this.scrollTime, this.activeObj, hide);				}
-				else{
+				else if ($(this.activeObj).closest("#menu").size() == 0){
 					$(this.scroll_bar).each(function(index, elem){tmpThis.sweepScrollConstruct(this);});
 				}
 				$(this.activeObj).children(".pictogram").find('img').attr('src', BASE_URL + "assets/images/logo_animation.gif");

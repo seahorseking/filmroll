@@ -8,18 +8,7 @@ class View extends Part{
 	public function index($lang = ""){
 		$lang = valid_language($lang);
 		$this->data['language'] = $lang;
-		$this->data['style'] = array('main');
-		$block = $this->page_link_block_model->get_by_name('index menu');
-		
-		$menu = $this->static_page_in_link_block_model->get_by_block($block['id'], array('page'));
-		
-		$i = 0;
-		foreach($menu as $m){
-			$tmp = get_lang_db($m['page_title'], $lang['id']);
-			$this->data['menu'][$i]['title'] = $tmp['lang_value'];
-			$this->data['menu'][$i]['link'] = base_url()."index.php/".$lang['link'].$tmp['slug'];
-			$i++;
-		}
+		$this->data['style'] = array('main', 'invis_scroll', 'program');
 		
 		//language
 		if ($this->language_model->count_all() > 1){
@@ -41,7 +30,7 @@ class View extends Part{
 	public function view($slug, $lang = ""){
 		$lang = valid_language($lang);
 		$this->data['language'] = $lang;
-		$this->data['style'] = array('main');
+		$this->data['style'] = array('main', 'invis_scroll');
 		
 		//if slug is actually language
 		if ($lang == "" && $this->language_model->exists_shortcut($slug)){

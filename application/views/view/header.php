@@ -28,3 +28,6 @@ foreach ($menu as $bar){
 }
 ?>
 </div>
+<div id="header-cinema" class="header-menu-item">
+	Aupark
+</div>

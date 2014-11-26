@@ -11,20 +11,28 @@ body, html, form{
 }
 
 body, html{
-	background-image: url('../images/bg.jpg');
+	background-image: url('../images/bg3.jpg');
+	background-repeat: no-repeat;
+	background-color: #cbcbcb;
 	background-size: 100% auto;
+	background-attachment: fixed;
 	font-size: 18px;
 	height: 100%;
 	font-family: Arial;
 }
 
+p{
+	text-align: justify;
+}
+
 input, textarea, select{
 	border: solid 1px transparent;
-	background-color: #585858;
+	background-color: #171717;
 	outline: none;
 	padding: 3px;
 	margin: 1px;
 	font-size: 18px;
+	color: #c8c8c8;
 }
 input[type=text]:focus, input[type=password]:focus, textarea:focus, select:focus{
 	border: solid 1px #f8bb06;
@@ -67,60 +75,113 @@ table.center{
 	width: 76.9230769%;
 	min-width: 400px;
 	height: 100%;
-	margin: 0 auto;
+	margin: 0px auto;
 	position: relative;
-	overflow: hidden;
+	overflow: visible;
 }
 	#side{
-		position: relative;
-		width: 23.4042553%;
+		position: fixed;
+		width: 16.9230769%;
 		height: 100%;
-		background-image: url('../images/film_tile.png');
-		background-size: 100% auto;
-		background-repeat: repeat-y;
 		float: left;
 	}
 		#search{
 			position: relative;
-			background-color: #323232;
+			background-color: #171717;
 			width: 100%;
 			height: 50px;
+			z-index: 2;
 		}
 			#search-box{
+				position: relative;
 				background-color: #585858;
 				width: 80%;
 				height: 22px;
-				margin: 10px auto;
 				color: #f8bb06;
+				margin: 10px 8.181818%;
 			}
 			#search-icon{
 				position: absolute;
 				left: 10%;
 				top: 16px;
 			}
-			
-		#posters{
-			position: relative;
-			height: 100%;
-			width: 68.181818181%;
-			margin: auto;
-		}
-			.poster-item{
-				width: 93.333333333%;
-				position: relative;
-				margin: 3.333333333%;
-			}
-			.poster-item>img{
+		
+		#posters-film{
+				position: absolute;
 				width: 100%;
+				height: auto;
+				top: 50px;
+				bottom: 0px;
+			}	
+			#posters-body{
+				position: relative;
+				background-image: url('../images/film_tile.png');
+				background-size: 100% auto;
+				background-repeat: repeat-y;
 			}
-	
+				#posters{
+					position: relative;
+					width: 68.181818181%;
+					margin: auto;
+				}
+					.poster-item{
+						width: 93.333333333%;
+						position: relative;
+						padding: 2px 3.333333333%;
+					}
+					.poster-item img{
+						width: 100%;
+					}
+					.poster-item img.opacity{
+						opacity: 0.3;
+					}
+		
 	#body{
 		position: relative;
+		left: 23.4042553%;
 		width: 76.5957447%;
-		height: 100%;
+		min-height: 100%;
 		overflow: hidden;
 		float: left;
 	}
+		#menu{
+			position: absolute;
+			left: 11.111111%;
+			top: 50px;
+			bottom: 35px;
+			right: 0px;
+			background-color: #171717;
+			z-index: 3;
+		}
+			#menu>div{
+				padding: 10px;
+			}
+			#menu img{
+				width: 100%;
+			}
+			.cinema-place{
+				position: absolute;
+				overflow: hidden;
+				z-index: 4;
+			}
+				.cinema-point{
+					width: 20px;
+					height:20px;
+					background-image: url('../images/cinema_point.png');
+					float: left;
+				}
+				.cinema-name{
+					float: left;
+				}
+			.bus-body{
+				overflow: hidden;
+				clear: both;
+			}
+				.bus{
+					padding: 0px 10px;
+					float: left;
+				}
+		
 		#header{
 			position: absolute;
 			right: 0px;
@@ -140,8 +201,11 @@ table.center{
 			}
 			#header-logo{
 				float: left;
-				padding: 3px 23px 3px 3px;
+				padding: 8px 28px 8px 8px;
 			}
+				#header-logo img{
+					width: 33px;
+				}
 			#header-menu{
 				overflow: hidden;
 				float: left;
@@ -151,9 +215,14 @@ table.center{
 					padding: 14px 15px;
 					color: #f8bb06;
 				}
+			#header-cinema{
+				overflow: hidden;
+				float: right;
+				cursor: pointer;
+			}
 		
 		#content{
-			padding: 80px 0px 60px 11.111111%;	
+			padding: 80px 0px 65px 11.111111%;	
 		}
 	
 		#footer {
@@ -161,7 +230,7 @@ table.center{
 			right: 0px;
 			bottom: 0px;
 			left: 11.111111%;
-			height: 30px;
+			height: 35px;
 			background-color: rgba(23, 23, 23, 0.9);
 			color: #c8c8c8;
 			font-size: 12px;
@@ -198,7 +267,13 @@ table.center{
 		float: left;
 		padding: 0px 10px;
 	}
-	
+
+.highlight-panel{
+	overflow: hidden;
+	background-color: rgba(88, 88, 88, 0.3);
+}
+
+
 .custom-button{
 	background-color: #171717;
 	margin: 8px 0px;

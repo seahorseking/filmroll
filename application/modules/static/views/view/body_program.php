@@ -284,12 +284,26 @@ $days = array(
 				</div>
 				<div classs="program-table">
 				<?php
+					$i = 0;
 					foreach ($d['m'] as $m => $val){
+						$i++;
 						?>
 						<div class="program-row">
 							<div class="program-column program-length"><div><?php echo $movies[$m]['length'];?></div></div>
-							<div class="program-subrow underline-dark">
-								<div class="program-column program-title rightsideline-dark"><div><?php echo $movies[$m]['slug'];?></div></div>
+							<?php 
+							if (sizeof($d['m']) == $i){
+								?>
+								<div class="program-subrow">
+								<?php
+							}
+							else{
+								?>
+								<div class="program-subrow underline-dark">
+								<?php
+							}
+							?>
+							
+								<div class="program-column program-title rightsideline-dark"><div><a class="exception line" href="<?php echo base_url()."index.php/film/".$movies[$m]['slug'];?>"><?php echo $movies[$m]['title'];?></a></div></div>
 								<div class="program-column program-language rightsideline-dark"><div><?php echo $val['type'];?></div></div>
 								<div class="program-column program-time">
 									<?php 
@@ -311,228 +325,5 @@ $days = array(
 			$i++;
 		}
 		?>
-			<!-- 
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="<?php echo base_url()."index.php/rezervacia/the-interview/1800/10-12-2014"?>">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:50</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>The Fighter</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK dab</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 21)."%;";?>"><a class="exception line" href="">21:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				utorok 11.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				streda 12.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				štvrtok 13.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				piatok 14.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 19)."%;";?>"><a class="exception line" href="">18:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 21)."%;";?>"><a class="exception line" href="">21:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				sobota 15.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>2:10</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 17)."%;";?>"><a class="exception line" href="">17:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 19)."%;";?>"><a class="exception line" href="">19:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 21)."%;";?>"><a class="exception line" href="">21:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:50</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>The Fighter</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK dab</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<div class="card card-move-right">
-			<div class="info-label program-date">
-				nedela 16.12.2014
-			</div>
-			<div classs="program-table">
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>The Interview</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>EN</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 18)."%;";?>"><a class="exception line" href="">18:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:30</div></div>
-					<div class="program-subrow underline-dark">
-						<div class="program-column program-title rightsideline-dark"><div>Interstellar</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK tit</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 20)."%;";?>"><a class="exception line" href="">20:00</a></div>
-						</div>
-					</div>
-				</div>
-				<div class="program-row">
-					<div class="program-column program-length"><div>1:50</div></div>
-					<div class="program-subrow">
-						<div class="program-column program-title rightsideline-dark"><div>The Fighter</div></div>
-						<div class="program-column program-language rightsideline-dark"><div>SK dab</div></div>
-						<div class="program-column program-time">
-							<div class="program-column program-time-item" style="<?php echo "left: ".get_left($timeline_from, $timeline_to, 21)."%;";?>"><a class="exception line" href="">21:00</a></div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		 -->
 	</div>
 </div>

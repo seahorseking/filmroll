@@ -1,3 +1,6 @@
+#program-scroll td{
+	width: 14.2857143%;
+}
 
 .program-table{
 	padding: 20px 0px 0px 0px;
@@ -44,9 +47,30 @@
 			width: 20%;
 			display: inline-block;
 		}
+	.program-now-time{
+		position: relative;
+		width: 12%;
+		height: 100%;
+		overflow: hidden;
+		padding: 0px;
+	}
+		.program-now-time-item{
+			position: absolute;
+			width: 100%;
+			display: inline-block;
+		}
+	.program-cinema{
+		position: relative;
+		width: 48%;
+		height: 100%;
+		overflow: hidden;
+		padding: 0px;
+		text-align: right;
+	}
 
 .program-date{
-	padding: 10px 0px 0px 11.1111%;
+	padding: 10px 0px 0px 5px;
+	margin: 0px 0px 0px 11.1111%;
 }		
 .rightsideline-dark{
 	padding: 0px;

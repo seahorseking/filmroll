@@ -31,13 +31,23 @@ class View extends Part{
 	public function view($slug, $time, $date, $lang = ""){
 		$lang = valid_language($lang);
 		$this->data['language'] = $lang;
-		$this->data['style'] = array('main', 'card', 'reservation');
+		$this->data['style'] = array('main', 'card', 'reservation', 'program');
 		$this->data['jscript'] = array('engine', 'reservation');
 		
 		$this->data['seats'][5][5] = 1;
 		$this->data['seats'][5][6] = 1;
 		$this->data['seats'][5][7] = 1;
 		$this->data['seats'][5][8] = 1;
+		
+		$this->data['seats'][7][8] = 1;
+		$this->data['seats'][7][9] = 1;
+		$this->data['seats'][7][10] = 1;
+		
+		$this->data['seats'][4][8] = 1;
+		$this->data['seats'][4][9] = 1;
+		
+		$this->data['seats'][3][2] = 1;
+		$this->data['seats'][3][3] = 1;
 		
 		$this->data['selected_m'] = $slug;
 		$this->data['selected_t'] = $time;
