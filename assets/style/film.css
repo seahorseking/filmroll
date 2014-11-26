@@ -1,0 +1,21 @@
+td{
+	width: 25%;
+}
+td img{
+	height: 28px;
+}
+
+#trailler{
+	position: relative;
+	float: right;
+	padding: 10px 10px 5px 10px;
+}
+	#trailler a{
+		display: block;
+		opacity: 0.7;
+		-webkit-transition: opacity linear 150ms;
+		transition: opacity linear 150ms;
+	}
+	#trailler a:hover{
+		opacity: 1.0;
+	}

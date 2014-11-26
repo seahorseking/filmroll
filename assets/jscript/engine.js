@@ -1,4 +1,9 @@
-var BASE_URL = "http://localhost/git/cards/";
+var BASE_URL = "http://localhost/git/filmroll/";
+
+function CardConnection(bar, obj){
+	this.scroll = bar;
+	this.main = obj;
+}
 
 function Cards(){
 	
@@ -8,11 +13,11 @@ function Cards(){
 	this.active = 0;
 	this.cardMainClass = "card-main";
 	this.cardClass = "card";
-	this.activeObj;
 	this.max = 0;
 	this.min = 0;
+	this.activeObj;
 	this.timer = false;
-	this.scroll_bar = null;
+	this.connection = [];
 	
 	this.insertPictogram = function(){
 		$(".card-main").prepend('<div class="pictogram"><img src="' + BASE_URL + 'assets/images/pictogram2.png"></div>');
@@ -22,10 +27,10 @@ function Cards(){
 		
 	};
 	
-	this.construct = function(scroll_bar){
-		this.max = $("#" + this.cardMainClass + ">." + this.cardClass).size();
-		this.activeObj = $("#" + this.cardMainClass + ":eq(0)");
-		this.scroll_bar = scroll_bar;
+	this.construct = function(scroll_bar, obj){
+		this.connection.push(new CardConnection(scroll_bar, obj));
+		tmp = this;
+		$(scroll_bar).bind('mouseover', function(){tmp.setMax(obj);});
 		//this.insertPictogram();
 		this.insertController();
 	};
@@ -102,15 +107,34 @@ function Cards(){
 				$(this.activeObj).children(".sweep-scroll").removeClass("sweep-scroll-invisible");
 				var tmpThis = this;
 				if ($(this.activeObj).children(".sweep-scroll").size() > 0){
-					alert("1");
 					$(this.activeObj).children(".sweep-scroll").each(function(index, elem){tmpThis.sweepScrollConstruct(this);});
 					setTimeout(this.onSweepFinnish, this.scrollTime, this.activeObj, hide);				}
-				else if ($(this.activeObj).closest("#menu").size() == 0){
-					$(this.scroll_bar).each(function(index, elem){tmpThis.sweepScrollConstruct(this);});
+				else if ($(this.activeObj).closest("#menu").size() == 0 && this.connectionExists(this.activeObj)){
+					$(this.connectionGetScroll(this.activeObj)).each(function(index, elem){tmpThis.sweepScrollConstruct(this);});
 				}
 				$(this.activeObj).children(".pictogram").find('img').attr('src', BASE_URL + "assets/images/logo_animation.gif");
 			}
 		}
+	};
+	
+	this.connectionExists = function(obj){
+		var i;
+		for (i = 0; i < this.connection.length; i++){
+			if ($(obj).is(this.connection[i].main)){
+				return true;
+			}
+		}
+		return false;
+	};
+	
+	this.connectionGetScroll = function(obj){
+		var i;
+		for (i = 0; i < this.connection.length; i++){
+			if ($(obj).is(this.connection[i].main)){
+				return this.connection[i].scroll;
+			}
+		}
+		return null;
 	};
 	
 	this.increment = function(){
@@ -129,10 +153,10 @@ cards = new Cards();
 
 $(document).ready(function(){
 	if ($("#program-scroll").size() > 0){
-		cards.construct($("#program-scroll"));
+		cards.construct($("#program-scroll"), $("#program .card-main").get(0));
 	}
-	else if ($("#reservation-steps").size() > 0){
-		cards.construct($("#reservation-steps"));
+	if ($("#reservation-steps").size() > 0){
+		cards.construct($("#reservation-steps"), $("#content .card-main").get(0));
 	}
 	
 	$(".sweep-scroll").bind("mouseover", function(event){

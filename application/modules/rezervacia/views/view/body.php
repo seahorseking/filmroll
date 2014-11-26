@@ -252,8 +252,7 @@ $seats_to = 21;
 <div class="card-main">
 	<div class="card card-move-left">
 		<div class="title1">Výber Filmu</div>
-		
-		<!-- 
+		 
 		<div id="program-scroll">
 			<table class="center">
 				<tr class="title3">
@@ -267,7 +266,7 @@ $seats_to = 21;
 				</tr>
 			</table>
 		</div>
-		<div id="res-program" style="position: relative; left: -12.5%; height: 300px; width: 112.5%;">
+		<div id="program" style="position: relative; left: -12.5%; height: 200px; width: 112.5%;">
 			<div class="card-main">
 				<?php 
 				$i = 0;
@@ -331,8 +330,8 @@ $seats_to = 21;
 				?>
 			</div>
 		</div>
-		 -->
-		  
+		
+		<!--   
 		<form>
 			<div>
 				<label for="select-movie">Film</label>
@@ -400,7 +399,7 @@ $seats_to = 21;
 				</select>
 			</div>
 		</form>
-		 
+		--> 
 		<div id="reservation-button">
 			<div class="custom-button custom-button-right">
 				<a href="javascript:void(0)" onClick="cards.increment();"><div>Ďalej</div></a>

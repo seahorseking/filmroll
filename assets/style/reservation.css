@@ -20,12 +20,17 @@
 		text-shadow: -1px 0 #171717, 0 1px #171717, 1px 0 #171717, 0 -1px #171717;
 	}
 	.reservation-item{
+		position: relative;
 		width: 93.333333333%;
 		position: relative;
-		margin: 3.333333333%;
+		padding: 3px 3.333333333%;
 		height: 140px;
-		background-color: #323232;
 	}
+		.reservation-item>div{
+			position: relative;
+			background-color: #323232;
+			height: 100%;
+		}
 
 #reservation-screen{
 	width: 70%;
